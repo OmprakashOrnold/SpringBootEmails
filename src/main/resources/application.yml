@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: SpringBootEmails
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      jdbc:
+        time_zone: UTC
+      globally_quoted_identifiers: false # MySQL does not support quoted identifiers
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect # Use MySQL-specific dialect
+      format_sql: true
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_ID}
+    password: ${EMAIL_PASSWORD}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        mime:
+          charset:UTF
+        smtp:
+          writetimeout: 10000
+          connectiontimeoit: 10000
+          timeout: 10000
+          starttls:
+            enable: true
+            required: true
+    verify:
+      host: ${VERIFY_EMAIL_HOST}
+server:
+  port: ${SERVER_PORT}

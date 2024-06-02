@@ -1,0 +1,19 @@
+
+#DataBase
+MYSQL_HOST : localhost
+MYSQL_PORT : 3306
+MYSQL_DB : sb_emails
+MYSQL_USERNAME : root
+MYSQL_PASSWORD : root
+
+#server
+SERVER_PORT : 9000
+ACTIVE_PROFILE : dev
+
+#Email Config
+
+EMAIL_HOST : smtp.gmail.com
+EMAIL_PORT : 587
+EMAIL_ID : dailylearningjava@gmail.com
+EMAIL_PASSWORD : xhln nmvx xwec gdom
+VERIFY_EMAIL_HOST : http://localhost:${SERVER_PORT}
